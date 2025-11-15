@@ -352,3 +352,8 @@ section.how-bg::before,
   mix-blend-mode: overlay;
   border-radius: inherit;
 }
+
+.docs-sidebar-bg {
+  background: linear-gradient(#120b04, #080503) !important;
+}
+
