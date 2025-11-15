@@ -11,7 +11,7 @@ export default function CLIDemo() {
   };
 
   return (
-    <section className="cli-bg relative px-6 pb-40">
+    <section className="cli-bg relative px-6 pb-20">
       <div className="section-wave"></div>
 
       {/* Header */}

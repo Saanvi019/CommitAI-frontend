@@ -146,7 +146,7 @@
 }
 
 .hero-bg {
-  background: linear-gradient( #000000, #53340e) !important;
+  background: linear-gradient( #000000, #3d260b) !important;
 }
 
 .footer-bg {
@@ -158,7 +158,7 @@
 .features-bg {
   position: relative;
   z-index: 2;
-  background: linear-gradient(#53340e, #442c0e) !important;
+  background: linear-gradient(#3d260b, #000000) !important;
   width: 100%;
 }
 .features-bg::after {
@@ -187,7 +187,7 @@ section.how-bg::before,
   position: absolute;
   inset: 0;
   z-index: 2;
-   background: linear-gradient( #442c0e, #38220c) !important;
+   background: linear-gradient( #000000, #000000) !important;
   background-size: cover;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -213,7 +213,7 @@ section.how-bg::before,
 .cli-bg {
   position: relative;
   z-index: 2;
-  background: linear-gradient( #38220c, #251707) !important;
+  background: linear-gradient( #000000, #3d260b) !important;
   width: 100%;
 }
 /* === TERMINAL ANIMATIONS UPGRADE === */
@@ -315,4 +315,36 @@ section.how-bg::before,
 
 @keyframes slideUp {
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* OUTER CTA BACKGROUND */
+.cta-section {
+  background: linear-gradient(#3d260b, #000000) !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* CTA BLACK CARD */
+.cta-card {
+  background: #000000;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 1rem;
+  padding: 3rem;
+  box-shadow:
+    0 0 30px rgba(0,0,0,0.5),
+    inset 0 0 25px rgba(255,255,255,0.06);
+  position: relative;
+  z-index: 5;
+}
+
+/* Optional grain to match hero */
+.cta-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABWGM9C...");
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  border-radius: inherit;
 }
