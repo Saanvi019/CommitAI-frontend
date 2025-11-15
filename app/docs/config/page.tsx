@@ -1,6 +1,6 @@
 "use client";
 
-import { Info, Zap, Lock, Coins } from "lucide-react";
+import { Info, Lock } from "lucide-react";
 
 export default function ConfigPage() {
   return (
@@ -15,119 +15,96 @@ export default function ConfigPage() {
             text-transparent bg-clip-text
           "
         >
-          Usage & Billing
+          Usage Limits
         </h1>
 
         <p className="text-white/60 text-lg mt-4 max-w-2xl">
-          Learn how CommitAI counts your daily commits, how limits work, and how to upgrade.
+          CommitAI is free for everyone. Each user gets a fair daily usage limit to prevent abuse.
         </p>
 
-        
-        {/* Free Plan */}
+
+        {/* Free Usage */}
         <div className="mt-12 p-6 rounded-xl bg-black border border-white/10 shadow-xl">
-          <h2 className="text-2xl font-medium text-white">Free Plan</h2>
+          <h2 className="text-2xl font-medium text-white">Daily Usage Limit</h2>
 
           <ul className="space-y-3 mt-4 text-white/70 leading-relaxed">
-            <li>• <span className="text-white font-medium">15 AI commits per day</span></li>
-            <li>• Resets automatically every 24 hours (midnight IST)</li>
-            <li>• Full CLI access</li>
-            <li>• No credit card required</li>
+            <li>• <span className="text-white font-medium">30 AI commits per day</span></li>
+            <li>• Resets automatically at midnight (IST)</li>
+            <li>• No login required on website — only GitHub login via CLI</li>
+            <li>• No payment, no subscriptions, no Pro/Free plans</li>
           </ul>
 
           <div className="mt-6 p-4 rounded-lg bg-white/5 border border-white/10 flex items-start gap-3">
             <Info className="w-5 h-5 text-blue-300 mt-1" />
             <p className="text-white/70 text-sm">
-              The daily limit resets automatically — no manual action needed.
+              Usage is tracked securely by your GitHub ID to prevent overuse.
             </p>
           </div>
         </div>
 
 
-        {/* Pro Plan */}
+        {/* How usage is counted */}
         <div className="mt-12 p-6 rounded-xl bg-black border border-white/10 shadow-xl">
-          <h2 className="text-2xl font-medium text-white flex items-center gap-2">
-            <Zap className="w-5 h-5 text-yellow-300" /> CommitAI Pro (₹99/month)
-          </h2>
-
-          <ul className="space-y-3 mt-4 text-white/70 leading-relaxed">
-            <li>• <span className="text-white font-medium">Unlimited AI commits</span></li>
-            <li>• Faster generation</li>
-            <li>• Priority API access</li>
-            <li>• No daily restrictions</li>
-          </ul>
-
-          <a
-            href="/upgrade"
-            className="
-              inline-block mt-6 px-6 py-3 rounded-lg
-              bg-yellow-400 text-black font-semibold
-              hover:bg-yellow-300 transition
-            "
-          >
-            Upgrade to Pro — ₹99/month
-          </a>
-        </div>
-
-
-        {/* How Usage is Counted */}
-        <div className="mt-12 p-6 rounded-xl bg-black border border-white/10 shadow-xl">
-          <h2 className="text-2xl font-medium text-white">How Usage is Counted</h2>
+          <h2 className="text-2xl font-medium text-white">How Usage Is Counted</h2>
 
           <ul className="space-y-4 mt-4 text-white/70 leading-relaxed">
-            <li>• Every successful AI-generated commit counts as <span className="text-white">1 usage</span>.</li>
-            <li>• If you cancel before selecting a message, it does NOT count.</li>
-            <li>• Usage is tied to your GitHub account.</li>
+            <li>• Every time you run <span className="text-white font-medium">commitai commit</span>, it counts as 1 usage.</li>
+            <li>• If no changes are staged, the request does NOT count.</li>
+            <li>• If CommitAI fails to generate suggestions, it does NOT count.</li>
+            <li>• Usage is tied to your GitHub account across all devices.</li>
           </ul>
 
           <div className="mt-6 p-4 rounded-lg bg-white/5 border border-white/10">
             <p className="text-white/70 text-sm">
               The CLI stores your token in:  
-              <span className="text-white block mt-1">~/.commitai/config.json</span>
+              <span className="text-white block mt-1">~/.commitai.json</span>
             </p>
           </div>
         </div>
 
 
-        {/* What happens when limit is reached */}
+        {/* Limit Reached */}
         <div className="mt-12 p-6 rounded-xl bg-black border border-white/10 shadow-xl">
           <h2 className="text-2xl font-medium text-white flex items-center gap-2">
             <Lock className="w-5 h-5 text-red-400" /> When You Hit the Daily Limit
           </h2>
 
           <p className="text-white/60 mt-4">
-            When your 15 commits are used, CommitAI CLI shows:
+            When you use all 30 commits, the CLI shows:
           </p>
 
           <pre className="
             bg-white/5 border border-white/10 rounded-lg p-4 
             text-white text-sm mt-4 whitespace-pre-wrap
           ">
-{`⛔ Daily limit reached (15/15)
-Upgrade to CommitAI Pro (₹99/month) to continue.
-https://commitai.dev/upgrade`}
+{`⛔ Daily limit reached (30/30)
+Please try again tomorrow.`}
           </pre>
 
           <p className="text-white/60 text-sm mt-4">
-            Upgrading instantly unlocks unlimited usage.
+            Limits reset automatically every midnight — no action required.
           </p>
         </div>
 
 
-        {/* Billing */}
+        {/* No Billing */}
         <div className="mt-12 p-6 rounded-xl bg-black border border-white/10 shadow-xl">
-          <h2 className="text-2xl font-medium text-white flex items-center gap-2">
-            <Coins className="w-5 h-5 text-green-300" /> Billing
-          </h2>
+          <h2 className="text-2xl font-medium text-white">Billing</h2>
 
           <p className="text-white/60 mt-4">
-            CommitAI uses secure, recurring monthly payments powered by Stripe.
+            CommitAI is completely free. There are:
           </p>
 
           <ul className="space-y-3 text-white/70 mt-4 leading-relaxed">
-            <li>• ₹99/month, cancel anytime</li>
-            <li>• Refunds handled via Stripe support</li>
-            <li>• Switching between plans happens instantly</li>
+            <li>• No Pro plans</li>
+            <li>• No payment system</li>
+            <li>• No credit card required</li>
+            <li>• No hidden upgrades</li>
           </ul>
+
+          <p className="text-white/60 mt-6">
+            The daily limit exists only to protect the service from abuse.
+          </p>
         </div>
 
       </div>
@@ -135,15 +112,3 @@ https://commitai.dev/upgrade`}
   );
 }
 
-
-/* Shared Components */
-function CodeBlock({ children }: any) {
-  return (
-    <pre className="
-      bg-white/5 border border-white/10 rounded-lg p-4 
-      text-white text-sm overflow-x-auto
-    ">
-      {children}
-    </pre>
-  );
-}

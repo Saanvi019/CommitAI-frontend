@@ -108,18 +108,18 @@ export default function TroubleshootingPage() {
         {/* SECTION 6: Rate limit reached */}
         <Section title="Daily limit reached" icon={<Info className="text-yellow-300" />}>
           <p className="text-white/60">
-            On free tier, you get <span className="text-white">15 commits/day</span>.
+            CommitAI allows <span className="text-white">30 commits per day</span>.
           </p>
 
-          <p className="text-white/60 mt-4">When limit is reached:</p>
+          <p className="text-white/60 mt-4">When your limit is reached:</p>
 
           <CodeBlock>
-{`⛔ Daily limit reached (15/15)
-Upgrade to CommitAI Pro (₹99/month) to continue.`}
+{`⛔ Daily limit reached (30/30)
+Please try again tomorrow.`}
           </CodeBlock>
 
-          <p className="text-white/60 mt-4">
-            Reset happens automatically at midnight.
+          <p className="text-white/60 text-sm mt-4">
+            The limit resets automatically at midnight.
           </p>
         </Section>
 
@@ -143,7 +143,7 @@ Upgrade to CommitAI Pro (₹99/month) to continue.`}
         {/* SECTION 8: Very large diffs */}
         <Section title="Diff too large" icon={<Info className="text-blue-400" />}>
           <p className="text-white/60">
-            CommitAI rejects diffs over 200 KB to avoid huge model costs.
+            CommitAI rejects diffs over 200 KB to avoid extremely large model requests.
           </p>
 
           <p className="text-white/60 mt-4">Fix:</p>
@@ -162,7 +162,6 @@ Upgrade to CommitAI Pro (₹99/month) to continue.`}
 
 
 /* COMPONENTS */
-
 function Section({ title, icon, children }: any) {
   return (
     <div className="mt-12 p-6 rounded-xl bg-black border border-white/10 shadow-xl">
