@@ -316,3 +316,7 @@ section.how-bg::before,
 @keyframes slideUp {
   to { opacity: 1; transform: translateY(0); }
 }
+
+.docs-bg {
+  background: linear-gradient(#221406, #000000) !important;
+}
