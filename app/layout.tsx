@@ -23,8 +23,9 @@ export default function RootLayout({
         {/* Page Content */}
         <main className="flex-1">{children}</main>
 
-        {/* Global Footer */}
-        <Footer />
+       <div className="footer-bg">
+  <Footer />
+</div>
       </body>
     </html>
   );

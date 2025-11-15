@@ -146,12 +146,173 @@
 }
 
 .hero-bg {
-  background: linear-gradient( #000000, #362209) !important;
+  background: linear-gradient( #000000, #53340e) !important;
 }
 
 .footer-bg {
-  background: rgba(0, 0, 0, 0.2) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border-top: 1px solid rgba(255,255,255,0.1) !important;
+  background: rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+.features-bg {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(#53340e, #442c0e) !important;
+  width: 100%;
+}
+.features-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABWGM9CAAABFUlEQVRoge3ZwQkCQRRF0anEAEHIABYJLAHsBdwB0AEGgQEXUOHfsmxVrHiovYca64H523tOx7H8u+kDbEqZC8D6wDHYQdNqp+9XjJD2W+Y8aefG7PRNt09/2BpW1HYPunE65pahiYru6B8JEsQlUI2iCMQlaEUkCVQNqCEkCVEJaRGkCVQNaCEkCVEJaRGkCVQNaCEkCVEJaRGkCVQNaCEkCVEJaRGkCVQNaCEkCVEJaRGkCcEaQhs94BeRuZg0Egm7nBf8DwQ2x5Vv1q/AAAAAElFTkSuQmCC"); 
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+}
+/* robust how-bg: visible brown gradient with texture, high specificity */
+section.how-bg,
+.how-bg {
+  position: relative;
+  z-index: 999; /* ensure above default site layers */
+  width: 100%;
+  background: none !important; /* clear any inherited background */
+  overflow: visible;
+}
+
+/* visible gradient layer */
+section.how-bg::before,
+.how-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+   background: linear-gradient( #442c0e, #38220c) !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+/* subtle texture */
+.how-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABWGM9C..."); /* keep your base64 */
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  z-index: 3;
+}
+
+/* ensure content is above layers */
+.how-bg > * {
+  position: relative;
+  z-index: 4;
+}
+.cli-bg {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient( #38220c, #251707) !important;
+  width: 100%;
+}
+/* === TERMINAL ANIMATIONS UPGRADE === */
+
+/* Full-black terminal styling */
+.terminal-bg {
+  position: relative;
+  background: #000 !important;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 25px 80px rgba(0,0,0,0.8);
+}
+
+/* Header */
+.terminal-header {
+  background: #0a0a0a !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Colored macOS dots */
+.t-red { background:#ff5f56 !important; }
+.t-yellow { background:#ffbd2e !important; }
+.t-green { background:#27c93f !important; }
+
+/* Typewriter effect */
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid rgba(255,255,255,0.7);
+  width: 0;
+  animation: typing 1.8s steps(40) forwards,
+             blink 0.9s infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 220px; } /* control stop point */
+}
+
+@keyframes blink {
+  0%,100% { border-color: transparent; }
+  50% { border-color: rgba(255,255,255,0.7); }
+}
+
+/* Fancy loading dots */
+.loading-dots::after {
+  content: "";
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0% { content:""; }
+  25% { content:"."; }
+  50% { content:".."; }
+  75% { content:"..."; }
+  100% { content:""; }
+}
+
+/* Fade-in lines */
+.fade-line {
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Delay utilities */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1s; }
+.delay-6 { animation-delay: 1.3s; }
+.delay-7 { animation-delay: 1.5s; }
+
+/* Premium subtle top glow */
+.terminal-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top center, rgba(255,255,255,0.08), transparent 70%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Scroll reveal */
+.suggestion-card {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: slideUp 0.6s forwards ease-out;
+}
+
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
 }
