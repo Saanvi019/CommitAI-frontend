@@ -42,7 +42,8 @@ export default function InstallPage() {
           </h2>
 
           <CodeBlock>
-            npm install -g commitai
+            npm install -g @rohaavi/commitai
+
           </CodeBlock>
 
           <p className="text-white/50 text-sm mt-4">

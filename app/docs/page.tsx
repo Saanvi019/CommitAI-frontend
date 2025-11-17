@@ -32,7 +32,7 @@ export default function DocsHome() {
           <div className="space-y-6">
 
             <CodeBlock label="Install CLI">
-              npm install -g commitai
+             npm install -g @rohaavi/commitai
             </CodeBlock>
 
             <CodeBlock label="Login with GitHub">

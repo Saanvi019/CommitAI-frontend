@@ -4,7 +4,7 @@ import { Terminal, Timer, Brain, GitCommit, Rocket, Wand2 } from "lucide-react";
 
 export default function FeaturesSection() {
   return (
-<section className="features-bg py-32 px-6">
+<section id="features" className="features-bg py-32 px-6">
 
       {/* Section Header */}
       <div className="text-center mb-20">

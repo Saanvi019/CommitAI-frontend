@@ -4,7 +4,7 @@ import { ArrowRight, Zap } from "lucide-react";
 
 export default function CTA() {
   return (
-    <section className="cta-section px-6 py-40 relative">
+    <section id="cta" className="cta-section px-6 py-40 relative">
 
       <div className="cta-card mx-auto max-w-7xl text-center px-10 py-20 rounded-2xl min-h-[450px]">
 
@@ -28,16 +28,17 @@ export default function CTA() {
 
         <div className="mt-10 flex items-center justify-center gap-6">
 
+          {/* ✅ Start Free should redirect to Install Docs */}
           <a
-            href="/signup"
+            href="/docs/install"
             className="
               inline-flex items-center gap-2 px-6 py-3
               text-black font-semibold text-sm rounded-lg
-              bg-amber-800 hover:bg-amber-300 transition 
-              shadow-[0_0_25px_rgba(0,255,255,0.15)]
+              bg-amber-800 hover:bg-amber-700 transition 
+              shadow-[0_0_25px_rgba(255,200,150,0.25)]
             "
           >
-            <Zap className="w-4 h-4 " />
+            <Zap className="w-4 h-4" />
             Start Free
           </a>
 

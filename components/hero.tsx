@@ -56,7 +56,7 @@ export default function Hero() {
       {/* ---- CTA Buttons ---- */}
       <div className="mt-10 flex items-center justify-center gap-4">
         <a
-          href="#get-started"
+          href="#cta"
           className="rounded-full bg-white text-black px-6 py-3 text-sm font-semibold shadow 
                      hover:bg-white/90 transition"
         >
@@ -64,7 +64,7 @@ export default function Hero() {
         </a>
 
         <a
-          href="#docs"
+          href="docs"
           className="text-sm font-semibold text-white/70 hover:text-white/90 transition"
         >
           View Docs →
